@@ -1,74 +1,178 @@
-# MLflow-Basic-Demo
+# 🍷 MLflow End-to-End Machine Learning Pipeline
 
+This project demonstrates an **end-to-end ML lifecycle** using **MLflow** with multiple machine learning models, remote tracking server integration, and automated model registration.
 
+The system trains, evaluates, and tracks several regression and classification models on the Wine Quality dataset.
 
-## For Dagshub:
+---
 
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
-python script.py
+# 🚀 Features
 
+✅ Multiple Regression Models Training
+✅ Classification Pipeline
+✅ PCA + Machine Learning Pipeline
+✅ MLflow Experiment Tracking
+✅ Remote AWS MLflow Server Integration
+✅ Model Registry Automation
+✅ Metrics Logging & Comparison
 
+---
 
-```bash
+# 📊 Models Implemented
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow
+## Regression Models
 
-export MLFLOW_TRACKING_USERNAME=entbappy 
+* Linear Regression
+* ElasticNet Regression
+* Random Forest Regressor
+* Decision Tree Regressor
 
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
+## Classification Model
 
+* Logistic Regression (Binary Wine Quality Classification)
+
+## Dimensionality Reduction
+
+* PCA + Linear Regression
+
+---
+
+# 📂 Dataset
+
+Wine Quality Dataset from MLflow repository:
 
 ```
-
-
-# MLflow on AWS
-
-## MLflow on AWS Setup:
-
-1. Login to AWS console.
-2. Create IAM user with AdministratorAccess
-3. Export the credentials in your AWS CLI by running "aws configure"
-4. Create a s3 bucket
-5. Create EC2 machine (Ubuntu) & add Security groups 5000 port
-
-Run the following command on EC2 machine
-```bash
-sudo apt update
-
-sudo apt install python3-pip
-
-sudo apt install pipenv
-
-sudo apt install virtualenv
-
-mkdir mlflow
-
-cd mlflow
-
-pipenv install mlflow
-
-pipenv install awscli
-
-pipenv install boto3
-
-pipenv shell
-
-
-## Then set aws credentials
-aws configure
-
-
-#Finally 
-mlflow server -h 0.0.0.0 --default-artifact-root s3://mlflow-tracking-buc25 --allowed-hosts *
-
-#open Public IPv4 DNS to the port 5000
-
-
-#set uri in your local terminal and in your code 
-export MLFLOW_TRACKING_URI=http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
+https://raw.githubusercontent.com/mlflow/mlflow/master/tests/datasets/winequality-red.csv
 ```
 
+Target Variable:
 
+```
+quality
+```
 
+---
+
+# ⚙️ Tech Stack
+
+* Python
+* Scikit-Learn
+* MLflow
+* Pandas
+* NumPy
+* AWS EC2 (Remote Tracking Server)
+
+---
+
+# 🧠 MLflow Capabilities Used
+
+* Experiment Tracking
+* Parameter Logging
+* Metrics Logging
+* Model Logging
+* Model Registry
+* Remote Tracking Server
+
+---
+
+# 📁 Project Structure
+
+```
+MLflow-Wine-Project/
+│── example.py
+│── requirements.txt
+│── README.md
+```
+
+---
+
+# 🔥 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/mlflow-wine-project.git
+cd mlflow-wine-project
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Run Project
+
+```bash
+python example.py
+```
+
+---
+
+# 🌐 MLflow Tracking Server
+
+The project uses a remote MLflow server:
+
+```
+http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
+```
+
+You can visualize experiments using:
+
+```bash
+mlflow ui
+```
+
+---
+
+# 📈 Metrics Logged
+
+## Regression Metrics
+
+* RMSE
+* MAE
+* R² Score
+
+## Classification Metrics
+
+* Accuracy
+
+---
+
+# ☁️ Model Registry
+
+Automatically registered models:
+
+```
+LinearRegressionWineModel
+ElasticNetWineModel
+RandomForestWineModel
+DecisionTreeWineModel
+LogisticWineModel
+PCAWineModel
+```
+
+---
+
+# 🏆 Learning Outcomes
+
+This project demonstrates:
+
+* End-to-End ML Pipeline
+* Experiment Tracking at Scale
+* Model Comparison & Selection
+* Production-ready ML Workflow
+
+---
+
+# 👨‍💻 Author
+
+Ashwani Yadav
+
+---
+
+# ⭐ Support
+
+If you found this useful, please give this repository a ⭐.
